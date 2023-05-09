@@ -2,19 +2,20 @@ import { Tile } from '../models/tile.model';
 
 type GetChessBoardTiles = () => Array<Array<Tile>>;
 
-const MAX_LENGTH: number = 8;
-
 const getChessBoardTiles: GetChessBoardTiles = function () {
   const tiles: Array<Array<Tile>> = [];
+  const maxLength: number = 8;
+  let charCode: number = 72;
 
-  for (let row = 0; row < MAX_LENGTH; row++) {
+  for (let row = 0; row < maxLength; row++) {
     tiles.push([]);
-    for (let column = 0; column < MAX_LENGTH; column++) {
+    for (let column = 0; column < maxLength; column++) {
       tiles[row].push({
-        coordinates: { row: row.toString(), column: column.toString() },
+        coordinates: { row: String.fromCharCode(charCode), column: (column + 1).toString() },
         click: false
       });
     }
+    charCode--;
   }
 
   return tiles;

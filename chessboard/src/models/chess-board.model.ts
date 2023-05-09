@@ -1,5 +1,5 @@
 import { Tile } from './tile.model';
 
-export interface ChessBoard {
+export interface ChessBoardModel {
   tiles: Array<Array<Tile>>;
 };

@@ -19,4 +19,14 @@ describe('Chess Board Tests', () => {
     expect(typeof chessBoardTiles[0][0].coordinates.row).toBe('string');
     expect(typeof chessBoardTiles[0][0].coordinates.column).toBe('string');
   });
+
+  test('getChessBoardTiles should return the first coordinate as H1', () => {
+    const expectedFirstCoordinate: string = 'H1';
+    expect(chessBoardTiles[0][0].coordinates.row + chessBoardTiles[0][0].coordinates.column).toBe(expectedFirstCoordinate);
+  });
+
+  test('getChessBoarTiles should return the last coordinate as A8', () => {
+    const expectedLastCoordinate: string = 'A8';
+    expect(chessBoardTiles[EXPECTED_LENGTH - 1][EXPECTED_LENGTH - 1].coordinates.row + chessBoardTiles[EXPECTED_LENGTH - 1][EXPECTED_LENGTH - 1].coordinates.column).toBe(expectedLastCoordinate);
+  });
 });
