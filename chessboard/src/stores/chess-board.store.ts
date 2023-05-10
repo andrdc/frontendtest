@@ -5,6 +5,7 @@ import { Tile } from '../models/tile.model';
 
 export const useChessBoardStore = defineStore('chessBoard', () => {
   const tiles: Ref<Array<Array<Tile>>> = ref(chessBoard.tiles);
+  const clickHistory: Ref<String> = ref(chessBoard.clickHistory);
 
-  return { tiles };
+  return { tiles, clickHistory };
 });

@@ -1,8 +1,13 @@
 <script setup lang="ts">
+import { useChessBoardStore } from '../stores/chess-board.store';
+
+const chessBoardStore = useChessBoardStore();
+
+{ chessBoardStore };
 </script>
 
 <template>
-  <div id="SideBar">SideBar</div>
+  <div id="SideBar">{{ chessBoardStore.clickHistory }}</div>
 </template>
 
 <style scoped lang="scss">

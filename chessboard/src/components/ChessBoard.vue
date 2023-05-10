@@ -1,8 +1,13 @@
 <script setup lang="ts">
+import { useChessBoardStore } from '../stores/chess-board.store';
+
+const chessBoardStore = useChessBoardStore();
+
+{ chessBoardStore };
 </script>
 
 <template>
-  <div id="ChessBoard">ChessBoard</div>
+  <div id="ChessBoard">{{ chessBoardStore.tiles }}</div>
 </template>
 
 <style scoped lang="scss">

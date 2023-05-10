@@ -4,6 +4,7 @@ import { getChessBoardTiles } from '../helpers/chess-board.helper';
 
 class ChessBoard implements ChessBoardModel {
   tiles: Array<Array<Tile>> = getChessBoardTiles();
+  clickHistory: String = '';
 }
 
 export const chessBoard = new ChessBoard();
