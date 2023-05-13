@@ -5,17 +5,16 @@ type GetChessBoardTiles = () => Array<Array<Tile>>;
 const getChessBoardTiles: GetChessBoardTiles = function () {
   const tiles: Array<Array<Tile>> = [];
   const maxLength: number = 8;
-  let charCode: number = 72;
+  const charCode: number = 65;
 
   for (let row = 0; row < maxLength; row++) {
     tiles.push([]);
     for (let column = 0; column < maxLength; column++) {
       tiles[row].push({
-        coordinates: { row: String.fromCharCode(charCode), column: (column + 1).toString() },
+        coordinates: { row: (maxLength - row).toString(), column: String.fromCharCode(charCode + column) },
         click: false
       });
     }
-    charCode--;
   }
 
   return tiles;

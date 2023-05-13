@@ -7,7 +7,10 @@ const chessBoardStore = useChessBoardStore();
 </script>
 
 <template>
-  <div id="SideBar">{{ chessBoardStore.clickHistory }}</div>
+  <div id="SideBar">
+    <h2>Coordinates Tracker</h2>
+    {{ chessBoardStore.clickHistory }}
+  </div>
 </template>
 
 <style scoped lang="scss">
@@ -16,7 +19,7 @@ const chessBoardStore = useChessBoardStore();
   grid-row: 1;
 }
 
-@include respond-to(md) {
+@include respond-to(lg) {
   #SideBar {
     grid-column: 1;
     grid-row: 3 / 3;

@@ -1,5 +1,5 @@
-import { getChessBoardTiles } from '../src/helpers/chess-board.helper';
-import { Tile } from '../src/models/tile.model';
+import { getChessBoardTiles } from '../../src/helpers/chess-board.helper';
+import { Tile } from '../../src/models/tile.model';
 
 describe('Chess Board Tests', () => {
   const EXPECTED_LENGTH: number = 8;
@@ -20,13 +20,13 @@ describe('Chess Board Tests', () => {
     expect(typeof chessBoardTiles[0][0].coordinates.column).toBe('string');
   });
 
-  test('getChessBoardTiles should return the first coordinate as H1', () => {
-    const expectedFirstCoordinate: string = 'H1';
-    expect(chessBoardTiles[0][0].coordinates.row + chessBoardTiles[0][0].coordinates.column).toBe(expectedFirstCoordinate);
+  test('getChessBoardTiles should return the first coordinate as A8', () => {
+    const expectedFirstCoordinate: string = 'A8';
+    expect(chessBoardTiles[0][0].coordinates.column + chessBoardTiles[0][0].coordinates.row).toBe(expectedFirstCoordinate);
   });
 
-  test('getChessBoarTiles should return the last coordinate as A8', () => {
-    const expectedLastCoordinate: string = 'A8';
-    expect(chessBoardTiles[EXPECTED_LENGTH - 1][EXPECTED_LENGTH - 1].coordinates.row + chessBoardTiles[EXPECTED_LENGTH - 1][EXPECTED_LENGTH - 1].coordinates.column).toBe(expectedLastCoordinate);
+  test('getChessBoarTiles should return the last coordinate as H1', () => {
+    const expectedLastCoordinate: string = 'H1';
+    expect(chessBoardTiles[EXPECTED_LENGTH - 1][EXPECTED_LENGTH - 1].coordinates.column + chessBoardTiles[EXPECTED_LENGTH - 1][EXPECTED_LENGTH - 1].coordinates.row).toBe(expectedLastCoordinate);
   });
 });

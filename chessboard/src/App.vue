@@ -21,7 +21,7 @@ import SideBar from './components/SideBar.vue';
   max-height: 100%;
 }
 
-@include respond-to(md) {
+@include respond-to(lg) {
   #PageWrapper {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
