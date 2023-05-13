@@ -1,4 +1,4 @@
-import { getChessBoardTiles } from '../../src/helpers/chess-board.helper';
+import { getChessBoardTiles, getCoordinate } from '../../src/helpers/chess-board.helper';
 import { Tile } from '../../src/models/tile.model';
 
 describe('Chess Board Tests', () => {
@@ -28,5 +28,10 @@ describe('Chess Board Tests', () => {
   test('getChessBoarTiles should return the last coordinate as H1', () => {
     const expectedLastCoordinate: string = 'H1';
     expect(chessBoardTiles[EXPECTED_LENGTH - 1][EXPECTED_LENGTH - 1].coordinates.column + chessBoardTiles[EXPECTED_LENGTH - 1][EXPECTED_LENGTH - 1].coordinates.row).toBe(expectedLastCoordinate);
+  });
+
+  test('getCoordinate should return a string with the correct coordinate given a tile', () => {
+    const expectedCoordinate: string = 'A8';
+    expect(getCoordinate(chessBoardTiles[0][0])).toBe(expectedCoordinate);
   });
 });

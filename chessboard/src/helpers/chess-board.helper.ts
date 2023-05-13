@@ -1,6 +1,7 @@
 import { Tile } from '../models/tile.model';
 
 type GetChessBoardTiles = () => Array<Array<Tile>>;
+type GetCoordinate = (tile: Tile) => String;
 
 const getChessBoardTiles: GetChessBoardTiles = function () {
   const tiles: Array<Array<Tile>> = [];
@@ -20,4 +21,8 @@ const getChessBoardTiles: GetChessBoardTiles = function () {
   return tiles;
 }
 
-export { getChessBoardTiles };
+const getCoordinate: GetCoordinate = function (tile: Tile): String {
+  return tile.coordinates.column + tile.coordinates.row;
+}
+
+export { getChessBoardTiles, getCoordinate };
